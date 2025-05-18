@@ -1,5 +1,6 @@
 import random
 from enum import Enum
+from menu import Menu # type: ignore
 
 class Genre(Enum):
     """Sexe du joueur"""
@@ -132,17 +133,13 @@ class Joueur:
 
 # si le fichier est exécuté directement depuis ce scrip, alors __name__ vaut "__main__".
 if __name__== "__main__":
-    print("debut du jeu")
+    menu = Menu()
+    menu.showMenu()
     #nomJoueur = input("Choisissez un nom: ")
     #prenomJoueur = input("Choisissez un prénom: ")
     
     joueur = Joueur()
-    
-    print(f"{joueur.prenom} est né aujourd'hui, un beau bébé de {random.randrange(1,5)} kg")
-    print(joueur)
-    joueur.vieillir()
-    joueur.diminueSante(100)
-    print(joueur)
+
     
 
 
